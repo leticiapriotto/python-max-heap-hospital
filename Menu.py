@@ -46,7 +46,7 @@ class Menu:
         prioridade_atendimento = 0
         prioridade_atendimento = int(input("\nPrioridade do paciente [1 a 10]: "))
         contador -= 1
-        print("Contador atual: ", contador)
+        print("Contador do limite da capacidade do SUS: ", contador)
         sleep(1)
 
         item = (prioridade_atendimento, ordem_atendimento, Paciente.__repr__(paciente))
