@@ -36,6 +36,7 @@ class Menu:
 
     def criarNovoPaciente():
         global ordem_atendimento
+        global contador
 
         nome_completo = str(input("\nNome do paciente: "))
         tipo_sanguineo = str(input("Tipo sanguíneo: "))
@@ -44,6 +45,9 @@ class Menu:
 
         prioridade_atendimento = 0
         prioridade_atendimento = int(input("\nPrioridade do paciente [1 a 10]: "))
+        contador -= 1
+        print("Contador atual: ", contador)
+        sleep(1)
 
         item = (prioridade_atendimento, ordem_atendimento, Paciente.__repr__(paciente))
         fila_espera.put(item)
@@ -70,9 +74,11 @@ class Menu:
         if(len(pacientes_chamados) <= 4):
             for i in range(len(pacientes_chamados)):
                 print(pacientes_chamados[i])
+                sleep(2)
         else:
             for i in range(1, 6):
                 print(pacientes_chamados[len(pacientes_chamados) - i])
+                sleep(2)
 
     def fecharHospital():
         print("O hospital está fechado!")
@@ -80,6 +86,7 @@ class Menu:
 
 fila_espera = MaxHeap()
 ordem_atendimento = 0
+contador = 999
 pacientes_chamados = list()
 
 system("cls")
