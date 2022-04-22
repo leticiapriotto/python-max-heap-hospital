@@ -70,7 +70,7 @@ class Menu:
         if(len(pacientes_chamados) <= 4):
             for i in range(len(pacientes_chamados)):
                 print(pacientes_chamados[i])
-        elif(len(pacientes_chamados > 5)):
+        else:
             for i in range(1, 6):
                 print(pacientes_chamados[len(pacientes_chamados) - i])
 
